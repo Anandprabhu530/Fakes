@@ -1,14 +1,10 @@
 package main
 
-import "fmt"
-
-func Say_Hello() {
-	fmt.Println("Hello World")
-}
-
-func main() {
-	fmt.Println(Name(3))
-}
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 var namesdata = []string{"Liam", "Olivia", "Noah", "Emma", "William", "Ava", "James", "Sophia",
 	"Oliver", "Isabella", "Benjamin", "Charlotte", "Elijah", "Mia", "Lucas",
@@ -29,4 +25,15 @@ var namesdata = []string{"Liam", "Olivia", "Noah", "Emma", "William", "Ava", "Ja
 
 func Name(num int) []string {
 	return namesdata[:num]
+}
+
+func Number() uint {
+	source := rand.NewSource(time.Now().UnixNano())
+	generator := rand.New(source)
+	randomNumber := 1000000000 + generator.Intn(9999999999)
+	return uint(randomNumber)
+}
+
+func main() {
+	fmt.Println(Number())
 }
