@@ -6,6 +6,23 @@ import (
 	"time"
 )
 
+var animalname = []string{"Ant", "Bear", "Cat", "Dog", "Elephant", "Fish", "Frog", "Giraffe",
+	"Horse", "Kangaroo", "Lion", "Monkey", "Mouse", "Owl", "Panda", "Penguin",
+	"Pig", "Rabbit", "Snake", "Tiger", "Turtle", "Whale", "Zebra", "Cheetah",
+	"Chimpanzee", "Crocodile", "Dolphin", "Eagle", "Fox", "Gorilla", "Hippopotamus",
+	"Hyena", "Jaguar", "Jellyfish", "Koala", "Leopard", "Lionfish", "Manatee", "Narwhal",
+	"Octopus", "Orangutan", "Parrot", "Peacock", "Python", "Quail", "Raccoon", "Rhinoceros",
+	"Salamander", "Seahorse", "Shark", "Sheep", "Sloth", "Squid", "Starfish", "Stingray",
+	"Tapir", "Tasmanian Devil", "Toucan", "Turkey", "Vulture", "Walrus", "Wolverine",
+	"Aardvark", "Albatross", "Armadillo", "Alpaca", "Antelope", "Baboon", "Badger", "Bat",
+	"Beagle", "Beetle", "Bison", "Boar", "Budgie", "Camel", "Capybara", "Caribou", "Cassowary",
+	"Chameleon", "Cheetah", "Chinchilla", "Cobra", "Condor", "Cormorant", "Coyote", "Crab",
+	"Crane", "Cricket", "Crow", "Deer", "Dingo", "Donkey", "Duck", "Echidna", "Eel", "Emu",
+	"Ferret", "Finch", "Flamingo", "Flea", "Fly", "Fox", "Gazelle", "Gecko", "Gnu", "Goose",
+	"Gorilla", "Grasshopper", "Grebe", "Greyhound", "Guinea Pig", "Hamster", "Hare", "Hawk",
+	"Hedgehog", "Heron", "Honeybee", "Hummingbird", "Hyena", "Ibex", "Iguana", "Impala",
+	"Jackal", "Jaguar", "Jay", "Jellyfish", "Kangaroo", "Koala", "Komodo Dragon", "Kookaburra"}
+
 var namesdata = []string{"Liam", "Olivia", "Noah", "Emma", "William", "Ava", "James", "Sophia",
 	"Oliver", "Isabella", "Benjamin", "Charlotte", "Elijah", "Mia", "Lucas",
 	"Amelia", "Mason", "Evelyn", "Ethan", "Abigail", "Alexander", "Harper",
@@ -34,6 +51,19 @@ func Number() uint {
 	return uint(randomNumber)
 }
 
+func AnimalName(num int) []string {
+	return animalname[:num]
+}
+
+func RandomColor() string {
+	source := rand.NewSource(time.Now().Unix())
+	generator := rand.New(source)
+	r := generator.Intn(256)
+	g := generator.Intn(256)
+	b := generator.Intn(256)
+	return fmt.Sprintf("#%02x%02x%02x\n", r, g, b)
+}
+
 func main() {
-	fmt.Println(Number())
+	fmt.Println(RandomColor())
 }
