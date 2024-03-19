@@ -40,6 +40,59 @@ var namesdata = []string{"Liam", "Olivia", "Noah", "Emma", "William", "Ava", "Ja
 	"Sofia", "Lucas", "Evelyn", "Mason", "Abigail", "Ethan", "Elizabeth",
 	"Alexander", "Avery", "Aiden", "Ella", "Henry", "Scarlett", "Joseph", "Chloe"}
 
+var countrycode = []string{
+	"Afghanistan",
+	"Armenia",
+	"Azerbaijan",
+	"Bahrain",
+	"Bangladesh",
+	"Bhutan",
+	"Brunei",
+	"Cambodia",
+	"China",
+	"Cyprus",
+	"East Timor",
+	"Egypt",
+	"Georgia",
+	"India",
+	"Indonesia",
+	"Iran",
+	"Iraq",
+	"Israel",
+	"Japan",
+	"Jordan",
+	"Kazakhstan",
+	"North Korea",
+	"South Korea",
+	"Kuwait",
+	"Kyrgyzstan",
+	"Laos",
+	"Lebanon",
+	"Malaysia",
+	"Maldives",
+	"Mongolia",
+	"Myanmar",
+	"Nepal",
+	"Oman",
+	"Pakistan",
+	"Palestine",
+	"Philippines",
+	"Qatar",
+	"Russia",
+	"Saudi Arabia",
+	"Singapore",
+	"Sri Lanka",
+	"Syria",
+	"Tajikistan",
+	"Thailand",
+	"Turkey",
+	"Turkmenistan",
+	"United Arab Emirates",
+	"Uzbekistan",
+	"Vietnam",
+	"Yemen",
+}
+
 func Name(num int) []string {
 	return namesdata[:num]
 }
@@ -55,6 +108,13 @@ func AnimalName(num int) []string {
 	return animalname[:num]
 }
 
+func Country() string {
+	sources := rand.NewSource(time.Now().Unix())
+	generator := rand.New(sources)
+	randomnumber := generator.Intn(len(countrycode)) + 1
+	return countrycode[randomnumber]
+}
+
 func RandomColor() string {
 	source := rand.NewSource(time.Now().Unix())
 	generator := rand.New(source)
@@ -65,5 +125,5 @@ func RandomColor() string {
 }
 
 func main() {
-	fmt.Println(RandomColor())
+	fmt.Println(Country())
 }
