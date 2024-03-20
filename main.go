@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+type Name_with_Number struct {
+	Name   string
+	Number uint
+}
+
 var animalname = []string{"Ant", "Bear", "Cat", "Dog", "Elephant", "Fish", "Frog", "Giraffe",
 	"Horse", "Kangaroo", "Lion", "Monkey", "Mouse", "Owl", "Panda", "Penguin",
 	"Pig", "Rabbit", "Snake", "Tiger", "Turtle", "Whale", "Zebra", "Cheetah",
@@ -21,7 +26,8 @@ var animalname = []string{"Ant", "Bear", "Cat", "Dog", "Elephant", "Fish", "Frog
 	"Ferret", "Finch", "Flamingo", "Flea", "Fly", "Fox", "Gazelle", "Gecko", "Gnu", "Goose",
 	"Gorilla", "Grasshopper", "Grebe", "Greyhound", "Guinea Pig", "Hamster", "Hare", "Hawk",
 	"Hedgehog", "Heron", "Honeybee", "Hummingbird", "Hyena", "Ibex", "Iguana", "Impala",
-	"Jackal", "Jaguar", "Jay", "Jellyfish", "Kangaroo", "Koala", "Komodo Dragon", "Kookaburra"}
+	"Jackal", "Jaguar", "Jay", "Jellyfish", "Kangaroo", "Koala", "Komodo Dragon", "Kookaburra",
+}
 
 var namesdata = []string{"Liam", "Olivia", "Noah", "Emma", "William", "Ava", "James", "Sophia",
 	"Oliver", "Isabella", "Benjamin", "Charlotte", "Elijah", "Mia", "Lucas",
@@ -38,7 +44,8 @@ var namesdata = []string{"Liam", "Olivia", "Noah", "Emma", "William", "Ava", "Ja
 	"John", "Sarah", "Owen", "Amelia", "Wyatt", "Evelyn", "Robert", "Isabella",
 	"Carter", "Charlotte", "Gabriel", "Mia", "Daniel", "Harper", "Elijah",
 	"Sofia", "Lucas", "Evelyn", "Mason", "Abigail", "Ethan", "Elizabeth",
-	"Alexander", "Avery", "Aiden", "Ella", "Henry", "Scarlett", "Joseph", "Chloe"}
+	"Alexander", "Avery", "Aiden", "Ella", "Henry", "Scarlett", "Joseph", "Chloe",
+}
 
 var countrycode = []string{
 	"Afghanistan",
@@ -124,6 +131,14 @@ func RandomColor() string {
 	return fmt.Sprintf("#%02x%02x%02x\n", r, g, b)
 }
 
+func Get_Name_with_Number() Name_with_Number {
+	var NamewithNumber Name_with_Number
+	randomname := Name(1)
+	NamewithNumber.Name = randomname[0]
+	NamewithNumber.Number = Number()
+	return NamewithNumber
+}
+
 func main() {
-	fmt.Println(Country())
+	fmt.Println(Get_Name_with_Number())
 }
