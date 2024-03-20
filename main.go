@@ -131,12 +131,12 @@ func RandomColor() string {
 	return fmt.Sprintf("#%02x%02x%02x\n", r, g, b)
 }
 
-func Get_Name_with_Number() Name_with_Number {
-	var NamewithNumber Name_with_Number
+func Get_Name_with_Number() map[string]interface{} {
 	randomname := Name(1)
-	NamewithNumber.Name = randomname[0]
-	NamewithNumber.Number = Number()
-	return NamewithNumber
+	return map[string]interface{}{
+		"name":   randomname[0],
+		"Number": Number(),
+	}
 }
 
 func main() {
