@@ -122,6 +122,13 @@ func Country() string {
 	return countrycode[randomnumber]
 }
 
+func ZipCode() uint {
+	source := rand.NewSource(time.Now().Unix())
+	generator := rand.New(source)
+	randomzip := 100000 + generator.Intn(999999)
+	return uint(randomzip)
+
+}
 func RandomColor() string {
 	source := rand.NewSource(time.Now().Unix())
 	generator := rand.New(source)
